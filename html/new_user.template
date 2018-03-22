@@ -1,0 +1,4 @@
+<div>
+	<center><h2>Welcome to bitter <TMPL_VAR NAME=username></h2></center>
+	<center><h4>Email sent to <TMPL_VAR NAME=email></h4></center>
+</div>

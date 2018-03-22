@@ -1,0 +1,21 @@
+Date        Start    Stop    Activity    Comments
+14/10/15    19:00    20:00   coding      displays user info, image, 
+                                         bleats
+18/10/15    12:00    13:00   coding      login
+18/10/15    18:00    20:00   coding      register new user
+18/10/15    22:00    23:00   coding      relevant bleats, listen
+                                         and unlisten
+19/10/15    11:00    12:00   coding      edit and display profile
+19/10/15    14:00    15:00   coding      sending bleats
+20/10/15    10:00    11:00   coding      added stuff for 
+                                         manipulating bleats
+20/10/15    20:00    22:00   coding      suspend or delete accounts
+20/10/15    23:00    00:00   coding      editing user information
+21/10/15    10:00    15:00   coding      fixing slight issues in 
+                                         everything, change pw,
+                                         checking email use and email
+                                         verification key gen
+22/10/15    ??:??    22:00   coding      bootstrap partially added
+24/10/15    20:00    22:00   coding      trying to get nested comments 
+                                         working
+25/10/15    9:00     22:00   coding      i'm not even sure anymore

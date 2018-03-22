@@ -1,0 +1,30 @@
+<form method="post" class="form center-block">
+  <textarea name="bleat" rows="3" class="form-control input-lg" placeholder="Bleat something..."></textarea>
+  <div class="modal-footer">
+    <button type="submit" name="page" value="Reply" class="btn btn-primary">Reply</button>
+    <ul class="pull-left list-inline"><li><a href="./bitter.cgi?page=Bleat+attachment"><i class="glyphicon glyphicon-upload"></i></a></li><li><a href="./bitter.cgi?page=Bleat+picture"><i class="glyphicon glyphicon-camera"></i></a></li><li><a href="./bitter.cgi?page=Bleat+location"><i class="glyphicon glyphicon-map-marker"></i></a></li></ul>
+  </div>
+<script>
+function validate_bleat() {		
+    var bleat = document.forms["bleating"]["bleat"].value;
+    
+    var empty = /^$/;
+    var max_char = /.{21}/;
+    var error = "";
+
+    //check name
+    if (empty.test(bleat)) {
+        error += "Enter something\n\n";
+    }
+    if (max_char.test(bleat)) {
+        error += "This isn't an essay\n\n";
+    }
+
+    if (error != "") {
+        alert(error);
+        return false;
+    }
+    return true;
+}
+</script>
+</form>

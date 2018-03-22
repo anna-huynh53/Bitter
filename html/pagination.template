@@ -1,0 +1,14 @@
+<h2>Search results</h2> returned <TMPL_VAR NAME=total> results<br><br>
+<h4><b>Users containing <TMPL_VAR NAME=search></b></h4><p>
+<TMPL_VAR NAME=user_results><br>  
+<h4><b>Bleats containing <TMPL_VAR NAME=search></b></h4>
+<TMPL_VAR NAME=bleat_results>
+<div class="container">
+	<div class="row">
+		<ul class="pagination">
+    <li><a href="./bitter.cgi?search=aaron&page=Search"><<</a></li>
+	   <TMPL_VAR NAME=pages>
+	<li><a href="./bitter.cgi?search=aaron&page=Search&pages=end">>></a></li>
+</ul>
+	</div>
+</div>

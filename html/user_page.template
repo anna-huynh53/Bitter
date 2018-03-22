@@ -1,0 +1,31 @@
+<div class="row">
+ <div class="col-sm-5">
+      <div class="panel panel-default">
+        <div class="panel-heading"><h4>Profile</h4></div>
+       	<div class="panel-body">
+        	<TMPL_VAR NAME=profile>                         
+        </div>
+      </div>
+ </div>
+ <div class="col-sm-7">
+     <div class="panel panel-default">
+       <div class="panel-heading"><h4>User Details</h4></div>
+       <div class="panel-body">
+           <ul class="list-group">
+           <li class="list-group-item">Name: <TMPL_VAR NAME=name></li>
+           <li class="list-group-item">Suburb: <TMPL_VAR NAME=suburb></li>
+           <li class="list-group-item">Latitude: <TMPL_VAR NAME=latitude></li>
+           <li class="list-group-item">Longitude: <TMPL_VAR NAME=longitude></li>                  
+           </ul>
+       </div>
+     </div>
+ </div>
+ <div class="col-sm-7">
+     <div class="panel panel-default">
+       <div class="panel-heading"><h4>Bleats</h4></div>
+       <div class="panel-body">
+           <TMPL_VAR NAME=bleats>
+       </div>
+     </div>
+ </div>
+

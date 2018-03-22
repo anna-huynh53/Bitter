@@ -1,0 +1,13 @@
+<!-- template from http://bootsnipp.com/snippets/BDE3v -->
+<li class="comment">
+    <a class="pull-left" href="./bitter.cgi?page=User+Page&user=<TMPL_VAR NAME=username>">
+        <img class="avatar" src="<TMPL_VAR NAME=pic>" alt="avatar">
+    </a>
+    <div class="comment-body">
+        <div class="comment-heading">
+            <h4 class="user"><a href="./bitter.cgi?page=User+Page&user=<TMPL_VAR NAME=username>"><TMPL_VAR NAME=username></a></h4>
+            <h5 class="time"><TMPL_VAR NAME=time></h5>
+        </div>
+        <p><TMPL_VAR NAME=content></p>
+    </div>
+</li>

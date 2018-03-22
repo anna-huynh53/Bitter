@@ -1,0 +1,27 @@
+<form method="post" name="send" onsubmit="return validate_bleat()">
+    <textarea name="content" value="Send Bleat" rows="5" cols="60">
+    </textarea> 
+    <input type="submit" name="page" value="Send">
+    <script>
+    function validate_bleat() {
+        var bleat = document.forms["send"]["content"].value;
+        
+        var empty = /^$/;
+        var max_char = /.{143}/;
+        var error = "";
+        
+        if (empty.test(bleat)) {
+            error += "Enter something\n\n";
+        }
+        if (max_char.test(bleat)) {
+            error += "Max characters execeeded\n\n";
+        }
+        
+        if (error != "") {
+            alert(error);
+            return false;
+        }
+        return true;
+    }
+    </script>
+</form>

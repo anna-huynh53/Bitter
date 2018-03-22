@@ -1,0 +1,42 @@
+<div class="row">
+ <div class="col-sm-5">
+      <div class="panel panel-default">
+        <div class="panel-thumbnail"><img src="<TMPL_VAR NAME=pic>" class="img-responsive"></div>
+        <div class="panel-body">
+          <p class="lead"><b><TMPL_VAR NAME=username></b></p>
+          <p>Listening to <TMPL_VAR NAME=list_num>, bleated <TMPL_VAR NAME=bleat_num> times</p>
+          <p>
+            <a href="./bitter.cgi?page=Listen&user=<TMPL_VAR NAME=username>" class="btn btn-xs btn-default"><span class="glyphicon glyphicon-volume-down"></span> Listen</a>
+            <a href="./bitter.cgi?page=Unlisten&user=<TMPL_VAR NAME=username>" class="btn btn-xs btn-default"><span class="glyphicon glyphicon-volume-off"></span> Unlisten</a>
+          </p>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading"><h4>Profile</h4></div>
+       	<div class="panel-body">
+        	<TMPL_VAR NAME=profile>                         
+        </div>
+      </div>
+ </div>
+ <div class="col-sm-7">
+     <div class="panel panel-default">
+       <div class="panel-heading"><h4>User Details</h4></div>
+       <div class="panel-body">
+           <ul class="list-group">
+           <li class="list-group-item">Name: <TMPL_VAR NAME=username></li>
+           <li class="list-group-item">Suburb: <TMPL_VAR NAME=suburb></li>
+           <li class="list-group-item">Latitude: <TMPL_VAR NAME=latitude></li>
+           <li class="list-group-item">Longitude: <TMPL_VAR NAME=longitude></li>                 
+           </ul>
+       </div>
+     </div>
+ </div>
+ <div class="col-sm-7">
+     <div class="panel panel-default">
+       <div class="panel-heading"><h4>Bleats</h4></div>
+       <div class="panel-body">
+           <TMPL_VAR NAME=bleats>
+       </div>
+     </div>
+ </div>
+

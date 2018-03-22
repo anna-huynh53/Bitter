@@ -1,0 +1,6 @@
+<div>
+    <h2><TMPL_VAR NAME=error></h2><br>
+    <form>
+     <a href="./bitter.cgi?page=<TMPL_VAR NAME=link>"<input type="submit" class="btn btn-primary">Go Back</a>
+    </form>
+</div>

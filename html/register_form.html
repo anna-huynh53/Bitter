@@ -1,0 +1,99 @@
+<!-- template from http://www.bootstrapzero.com/bootstrap-template/sign-in -->
+<form method="post" name="register" onsubmit="return validate_form()">
+  <div class="modal-dialog">
+  <div class="modal-content">
+      <div class="modal-header">
+          <h1 class="text-center">Register</h1>
+      </div>
+      <div class="modal-body">
+            <div class="form-group">
+              <input type="text" class="form-control input-lg" placeholder="Name" name="name">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control input-lg" placeholder="Username" name="username">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control input-lg" placeholder="Email" name="email">
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control input-lg" placeholder="Password" name="password">
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control input-lg" placeholder="Confirm Password" name="confirm_pw">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control input-lg" placeholder="Suburb" name="suburb">
+            </div>
+            <div class="form-group">
+              <button class="btn btn-primary btn-lg btn-block" type="submit" name="page" value="Register">Register</button>
+              <span class="pull-right"><a href="./bitter.cgi?page=Login">Already a user?</a></span><span><a href="./bitter.cgi?page=Help">Need help?</a></span>
+            </div>
+		    <script>
+            function validate_form() {		
+	            var name = document.forms["register"]["name"].value;
+	            var username = document.forms["register"]["username"].value;
+	            var email = document.forms["register"]["email"].value;
+		        var password = document.forms["register"]["password"].value;
+		        var con_pw = document.forms["register"]["confirm_pw"].value;
+                var suburb = document.forms["register"]["suburb"].value;
+                
+		        var empty = /^$/;
+		        var valid_name = /[^A-Za-z ]/;
+		        var valid_username = /[^A-Za-z0-9\_]/;
+		        var valid_email = /.+\@.+/;
+		        var valid_suburb = /[^A-Za-z]/;
+		        var min_char = /.{5}/;
+		        var max_char = /.{21}/;
+		        var error = "";
+		
+		        //check name
+		        if (empty.test(name)) {
+			        error += "Enter name\n\n";
+		        } else if (valid_name.test(name)) {
+			        error += "Name can only contain letters and spaces\n\n";
+		        }
+		        //check username
+		        if (empty.test(username)) {
+			        error += "Enter a username\n\n";
+		        } else if (max_char.test(username) || valid_username.test(username)) {
+			        error = error + "Username max 20 chars and can only" +
+			                " contain alphanumeric and underscores\n\n";
+			    }
+	            //check email
+	            if (empty.test(email)) {
+	                error += "Enter an email\n\n";
+	            } else if (!valid_email.test(email)) {
+	                error += "Enter valid email\n\n";
+	            }
+	            //check password
+		        if (empty.test(password)) {
+			        error += "Enter a password\n\n";
+		        } else if (!min_char.test(password)) {
+		            error += "Password must be at least 5 characters\n\n";
+		        } 
+		        if (con_pw != password) {
+		            error += "Passwords do not match\n\n";
+		        }
+		        //check suburb
+		        if (empty.test(suburb)) {
+		            error += "Enter a suburb\n\n";
+		        } else if (valid_suburb.test(suburb)) {
+		            error += "Suburb can only contain letters\n\n";
+		        }
+
+		        if (error != "") {
+			        alert(error);
+			        return false;
+		        }
+		        return true;
+	        }
+            </script>
+      </div>
+      <div class="modal-footer"></div>
+  </div>
+  </div>
+</form>
+	<!-- script references -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+		<script src="style/js/bootstrap.min.js"></script>
+		<script src="style/js/scripts.js"></script>

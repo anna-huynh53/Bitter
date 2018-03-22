@@ -1,0 +1,142 @@
+<!-- Faceboot template from http://www.bootstrapzero.com/bootstrap-template/facebook -->
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<title>Bitter</title>
+	<meta name="generator" content="Bootply" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link href="style/css/bootstrap.min.css" rel="stylesheet">
+	<!--[if lt IE 9]>
+		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link href="style/css/styles.css" rel="stylesheet">
+</head>
+<body>
+<div class="wrapper">
+    <div class="box">
+        <div class="row row-offcanvas row-offcanvas-left">          
+            <!-- sidebar -->
+            <div class="column col-sm-2 col-xs-1 sidebar-offcanvas" id="sidebar">       
+              	<ul class="nav">
+          			<li><a href="#" data-toggle="offcanvas" class="visible-xs text-center"><i class="glyphicon glyphicon-user"></i></a></li>
+            	</ul>
+                <ul class="nav hidden-xs" id="lg-menu">
+                    <div class="panel-thumbnail"><img src="<TMPL_VAR NAME=pic>" class="img-response"></div>
+                      <p class="lead"><TMPL_VAR NAME=user></p>
+                      <p>Listening to <TMPL_VAR NAME=listen_num>, bleated <TMPL_VAR NAME=bleat_num> times</p>                                 
+                    <li class="active"><a href="./bitter.cgi?page=Listening"><i class="glyphicon glyphicon-headphones"></i> Listening</a></li>
+                    <li><a href="./bitter.cgi?page=Upload+Profile+Picture"><i class="glyphicon glyphicon-trash"></i> Upload Picture</a></li>
+                    <li><a href="./bitter.cgi?page=Edit+Profile"><i class="glyphicon glyphicon-pencil"></i> Edit Profile</a></li>
+                    <li><a href="./bitter.cgi?page=Favourites"><i class="glyphicon glyphicon-star"></i> Favourites</a></li>
+                </ul>
+                <ul class="list-unstyled hidden-xs" id="sidebar-footer">
+                    <li>
+                      <a href="./bitter.cgi?"><i class="glyphicon glyphicon-globe"></i> Bitter</a>
+                    </li>
+                </ul>              
+              	<!-- tiny only nav-->
+              <ul class="nav visible-xs" id="xs-menu">
+                  	<li><a href="./bitter.cgi?page=Listening" class="text-center"><i class="glyphicon glyphicon-headphones"></i></a></li>
+                    <li><a href="./bitter.cgi?page=Upload+Profile+Picture" class="text-center"><i class="glyphicon glyphicon-trash"></i></a></li>
+                  	<li><a href="./bitter.cgi?page=Edit+Profile" class="text-center"><i class="glyphicon glyphicon-pencil"></i></a></li>
+                    <li><a href="./bitter.cgi?page=Favourites" class="text-center"><i class="glyphicon glyphicon-star"></i></a></li>
+                </ul>             
+            </div>
+            <!-- /sidebar -->          
+            <!-- main right col -->
+            <div class="column col-sm-10 col-xs-11" id="main">               
+                <!-- top nav -->
+              	<div class="navbar navbar-blue navbar-static-top">  
+                    <div class="navbar-header">
+                      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle</span>
+                        <span class="icon-bar"></span>
+          				<span class="icon-bar"></span>
+          				<span class="icon-bar"></span>
+                      </button>
+                      <a href="./bitter.cgi?" class="navbar-brand logo">b</a>
+                  	</div>
+                  	<nav class="collapse navbar-collapse" role="navigation">
+                    <form class="navbar-form navbar-left">
+                        <div class="input-group input-group-sm" style="max-width:360px;">
+                          <input type="text" class="form-control" placeholder="Search" name="search">
+                          <div class="input-group-btn">
+                            <button class="btn btn-default" name="page" value="Search" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                          </div>
+                        </div>
+                    </form>
+                    <ul class="nav navbar-nav">
+                      <li>
+                        <a href="./bitter.cgi?page=User+Page"><i class="glyphicon glyphicon-flash"></i> Your page</a>
+                      </li>
+                      <li>
+                        <a href="#postModal" role="button" data-toggle="modal"><i class="glyphicon glyphicon-plus"></i> Send a bleat</a>
+                      </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-cog"></i></a>
+                        <ul class="dropdown-menu">
+                          <li><a href="./bitter.cgi?page=Edit+User+Info"><i class="glyphicon glyphicon-pencil"></i> Edit User Info</a></li>
+                          <li><a href="./bitter.cgi?page=Email+Change"><i class="glyphicon glyphicon-envelope"></i> Change Email</a></li>
+                          <li><a href="./bitter.cgi?page=Password+Change"><i class="glyphicon glyphicon-random"></i> Change Password</a></li>
+                          <li><a href="./bitter.cgi?page=Edit+Notifications"><i class="glyphicon glyphicon-bell"></i> Edit Notifications</a></li>
+                          <li><a href="./bitter.cgi?page=Suspend+Account"><i class="glyphicon glyphicon-eye-open"></i> Suspend Account</a></li>                          
+                          <li><a href="./bitter.cgi?page=Delete+Account"><i class="glyphicon glyphicon-fire"></i> Delete account</a></li>
+                          <li role="separator" class="divider"></li>
+                          <li><a href="./bitter.cgi?page=Logout"><i class="glyphicon glyphicon-stop"></i> Logout</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  	</nav>
+                </div>
+                <!-- /top nav -->
+                <div class="padding">
+                    <div class="full col-sm-9">
+<!--post modal-->
+<div id="postModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+  <div class="modal-content">
+      <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+			<h5><b>Max 142 chars cause no one wants to read your life story</b></h5>
+      </div>
+      <div class="modal-body">
+          <form method="post" name="bleating" class="form center-block" onsubmit="return validate_bleat()">
+              <textarea name="bleat" value="Bleat" rows="3" class="form-control input-lg" autofocus="" placeholder="Bleat something..."></textarea>
+              <div class="modal-footer">
+                <button type="submit" name="page" value="Send Bleat" class="btn btn-primary">Bleat</button>
+                <ul class="pull-left list-inline"><li><a href="./bitter.cgi?page=Bleat+attachment"><i class="glyphicon glyphicon-upload"></i></a></li><li><a href="./bitter.cgi?page=Bleat+picture"><i class="glyphicon glyphicon-camera"></i></a></li><li><a href="./bitter.cgi?page=Bleat+location"><i class="glyphicon glyphicon-map-marker"></i></a></li></ul>
+              </div>
+		    <script>
+            function validate_bleat() {		
+	            var bleat = document.forms["bleating"]["bleat"].value;
+                
+		        var empty = /^$/;
+		        var max_char = /.{21}/;
+		        var error = "";
+		
+		        //check name
+		        if (empty.test(bleat)) {
+			        error += "Enter something\n\n";
+		        }
+                if (max_char.test(bleat)) {
+                    error += "This isn't an essay\n\n";
+			    }
+
+		        if (error != "") {
+			        alert(error);
+			        return false;
+		        }
+		        return true;
+	        }
+            </script>
+          </form>
+      </div>
+  </div>
+  </div>
+</div>
+	<!-- script references -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+		<script src="style/js/bootstrap.min.js"></script>
+		<script src="style/js/scripts.js"></script>

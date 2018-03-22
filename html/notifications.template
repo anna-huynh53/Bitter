@@ -1,0 +1,29 @@
+<div onsubmit="return confirmOK()">
+<form>
+    <h2>Edit Notifications</h2><br>
+    <p>Username mentions: <TMPL_VAR NAME=username_not>
+        <select name="username_not">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+    </p>
+    <p>Replies to bleats: <TMPL_VAR NAME=bleat_not>
+        <select name="bleat_not">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+    </p>
+    <p>New listener: <TMPL_VAR NAME=list_not>
+        <select name="listener_not">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+    </p><br>
+    <p><input type="submit" class="btn btn-primary btn" name="page" value="Save settings"></p>
+    <script type="text/javascript">
+        function confirmOK() {
+            return window.confirm("Settings saved");
+        }
+    </script>
+</form>
+</div>  

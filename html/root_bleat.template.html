@@ -1,0 +1,44 @@
+<!-- template from http://bootsnipp.com/snippets/BDE3v -->
+<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+<div class="container">
+    <div class="col-sm-8">
+        <div class="panel panel-white post panel-shadow">
+            <div class="post-heading">
+                <div class="pull-left image">
+                    <img src="<TMPL_VAR NAME=pic>" class="img-circle avatar" alt="user profile image">
+                </div>
+                <div class="pull-left meta">
+                    <div class="title h5">
+                        <a href="./bitter.cgi?page=User+Page&user=<TMPL_VAR NAME=username>"><b><TMPL_VAR NAME=username></b></a>
+                        bleated
+                    </div>
+                    <h6 class="text-muted time"><TMPL_VAR NAME=time></h6>
+                </div>
+            </div> 
+            <div class="post-description"> 
+                <p><TMPL_VAR NAME=content></p>
+                <div class="stats">
+                    <a href="#" class="btn btn-default stat-item">
+                        <i class="fa fa-thumbs-up icon"></i>2
+                    </a>
+                    <a href="#" class="btn btn-default stat-item">
+                        <i class="fa fa-share icon"></i>12
+                    </a>
+                </div>
+            </div>
+            <div class="post-footer">
+                <div class="input-group"> 
+                    <input class="form-control" placeholder="Bleat back a reply" type="text" name="bleat">
+                    <span class="input-group-addon">
+                        <a href="./bitter.cgi?page=Reply+Bleat&replyTo=<TMPL_VAR NAME=file>"><i class="fa fa-edit"></i></a>  
+                    </span>
+                </div>
+                
+                <ul class="comments-list">
+                    <TMPL_VAR NAME=replies>
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</div>

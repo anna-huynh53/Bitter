@@ -1,0 +1,8 @@
+full_name: Aaron Peirsol
+home_latitude: -33.9255
+home_longitude: 151.0256
+home_suburb: Bankstown
+email:
+listens: VitaliKlitschko  ChocolateMarisa56 DaisyFuentes 
+password: oliver
+username: TenderAaron

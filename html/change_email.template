@@ -1,0 +1,28 @@
+<div>
+    <form method="post" name="change_email" onsubmit="return validate_email()">
+	    <h2>Change email</h2><br>
+	    Current email: <TMPL_VAR NAME=email><br> 
+		<input type="text" placeholder="New email" name="new_email"><br><br>	
+		<input type="submit" class="btn btn-primary btn" name="page" value="Change email">	
+		<script>
+        function validate_email() {		
+            var email = document.forms["change_email"]["new_email"].value;
+            
+		    var empty = /^$/;
+		    var valid_email = /.+\@.+/;
+		    var error = "";
+		
+		    if (empty.test(email)) {
+			    error += "Enter an email\n\n";
+			} elsif (valid_email.test(email)) {
+			    error += "Enter a valid email\n\n";
+		    }
+		    if (error != "") {
+			    alert(error);
+			    return false;
+		    } 
+		    return true;
+	    }
+        </script>
+	</form>
+</div>

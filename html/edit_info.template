@@ -1,0 +1,43 @@
+<div>
+    <form method="post" name="change_info" onsubmit="return validate_info()">
+	    <h2>Edit information</h2><br>
+	    Name: <input type="text" placeholder="<TMPL_VAR NAME=name>" name="name"><br>
+	    Suburb: <input type="text" placeholder="<TMPL_VAR NAME=suburb>" name="suburb"> <br><br>
+		<input type="submit" class="btn btn-primary" name="page" value="Save changes">
+		<script>
+        function validate_info() {		
+	        var name = document.forms["change_info"]["name"].value;
+            var suburb = document.forms["change_info"]["suburb"].value;
+            
+		    var space = / /;
+		    var letters = /\w/;
+		    var max_char = /.{20}/;
+		    var error = "";
+		
+		    //check name
+		    if (empty.test(name)) {
+			    error += "Enter name\n\n";
+		    } else if (!max_char.test(name) || !letters.test(name) || 
+		               !space.test(name)) {
+			    error = error + "Username must be max 20 characters " + 
+			            "and can only contain alphanumeric " +
+		                "and underscores\n\n";
+		    }
+            //check suburb
+		    if (empty.test(suburb)) {
+		        error += "Enter a suburb\n\n";
+		    } else if (letters.test(suburb)) {
+		        error += "Suburb can only contain letters\n\n";
+		    }
+
+		    if (error != "") {
+			    alert(error);
+			    return false;
+		    }
+		    return true;
+	    }
+        </script>
+	</form>
+</div>
+
+

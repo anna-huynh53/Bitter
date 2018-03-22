@@ -1,0 +1,40 @@
+<div>
+    <form method="post" name="change_pw" onsubmit="return validate_pw()">
+	    <h2>Change password</h2><br>
+		<input type="password" placeholder="Old password" name="old_pw"><br>		
+		<input type="password" placeholder="Password" name="password"><br>
+		<input type="password" placeholder="Confirm Password" name="confirm_pw"><br><br>
+		<input type="submit" class="btn btn-primary btn" name="page" value="Change password">
+		<script>
+        function validate_pw() {		
+            var old_pw = document.forms["change_pw"]["old_pw"].value;
+		    var password = document.forms["change_pw"]["password"].value;
+		    var con_pw = document.forms["change_pw"]["confirm_pw"].value;
+            
+		    var empty = /^$/;
+		    var min_char = /.{5}/;
+		    var error = "";
+		
+		    if (empty.test(old_pw)) {
+			    error += "Enter old password\n\n";
+			}
+		    if (empty.test(password)) {
+			    error += "Enter a password\n\n";
+		    } else if (!min_char.test(password)) {
+		        error = error + "Password must be at least 5 characters\n\n";
+		    } 
+		    if (con_pw != password) {
+		        error += "Passwords do not match\n\n";
+		    }
+
+		    if (error != "") {
+			    alert(error);
+			    return false;
+		    } 
+		    return true;
+	    }
+        </script>
+	</form>
+</div>
+
+
